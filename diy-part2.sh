@@ -62,13 +62,13 @@ $GITHUB_WORKSPACE/preset-clash-core.sh
 sed -i 's/192.168.1.1/192.168.66.253/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
 sed -i 's/ImmortalWrt/GBC/g' package/base-files/files/bin/config_generate
 
 # 修改系统信息
-cp -f $GITHUB_WORKSPACE/99-default-settings package/emortal/default-settings/files/99-default-settings
+# cp -f $GITHUB_WORKSPACE/99-default-settings package/emortal/default-settings/files/99-default-settings
 cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
 
 # 修改主题背景
