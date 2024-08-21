@@ -58,11 +58,14 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # " >> .config
 
+# Add the default password for the 'root' user（Change the empty password to 'password'）
+sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7:::/g' package/base-files/files/etc/shadow
+
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.66.253/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
 sed -i 's/ImmortalWrt/GBC/g' package/base-files/files/bin/config_generate
