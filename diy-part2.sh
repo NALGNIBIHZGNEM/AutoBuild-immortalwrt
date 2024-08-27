@@ -100,6 +100,5 @@ cp -f $GITHUB_WORKSPACE/argon/icon/ms-icon-144x144.png feeds/luci/themes/luci-th
 #sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
 
 # 修改版本为编译日期
-#date_version=$(date +"%y.%m.%d")
-#orig_version=$(cat "package/lean/default-settings/files/zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
-#sed -i "s/${orig_version}/R${date_version} by Haiibo/g" package/lean/default-settings/files/zzz-default-settings
+date_version="ImmortalWrt Compile At "$(date +"%Y.%m.%d")
+sed -ri "s/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION=$date_version/g" package/base-files/files/etc/openwrt_release
